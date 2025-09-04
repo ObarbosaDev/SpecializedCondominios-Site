@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specialized - Serviços para Condomínios</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Adicionando fonte ultra-moderna Poppins para navbar -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+            /* Removendo nardo grey e mantendo apenas as outras cores */
+            --silver: #C0C0C0;
+            --charcoal: #1a1a1a;
+            --dark-grey: #2a2a2a;
+            --gradient-primary: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            --gradient-secondary: linear-gradient(135deg, #1a1a1a 0%, #C0C0C0 100%);
+            --gradient-accent: linear-gradient(45deg, #000000, #C0C0C0, #000000);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Aplicando fonte Inter mais moderna */
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-black);
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            /* Usando Inter para títulos com peso mais forte */
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        /* Adicionando classe para texto monoespaçado moderno */
+        .mono-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        /* Navbar ultra-moderno com design futurista */
+        .navbar-custom {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(192, 192, 192, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 1.2rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-custom.scrolled {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(26, 26, 26, 0.98) 100%);
+            padding: 0.8rem 0;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 900;
+            font-size: 2rem;
+            color: var(--primary-white) !important;
+            text-decoration: none;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .navbar-brand i {
+            background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-right: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+            color: rgba(192, 192, 192, 0.9) !important;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0 0.8rem;
+            padding: 0.8rem 1.2rem !important;
+            border-radius: 25px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-white) !important;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(192, 192, 192, 0.2);
+            border: 1px solid rgba(192, 192, 192, 0.2);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 8px;
+            left: 50%;
+            background: linear-gradient(90deg, #ffffff, #c0c0c0);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        /* Melhorando o toggler do mobile */
+        .navbar-toggler {
+            border: 2px solid rgba(192, 192, 192, 0.3);
+            border-radius: 8px;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            border-color: rgba(192, 192, 192, 0.6);
+            background: rgba(192, 192, 192, 0.1);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28192, 192, 192, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Animação especial para o container do navbar */
+        .navbar .container {
+            position: relative;
+        }
+
+        .navbar .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+        }
+
+        .hero-section {
+            background: var(--gradient-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23C0C0C0" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary-white);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .btn-custom {
+            background: linear-gradient(135deg, var(--silver-gray) 0%, #ffffff 50%, var(--silver-gray) 100%);
+            border: 2px solid var(--silver-gray);
+            color: var(--primary-black);
+            padding: 1.2rem 2.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-custom:hover::before {
+            left: 100%;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(192, 192, 192, 0.4);
+            color: var(--primary-black);
+            border-color: #ffffff;
+        }
+
+        /* Novo estilo para o botão de orçamento com destaque especial */
+        .btn-quote {
+            background: linear-gradient(135deg, var(--primary-black) 0%, #333333 50%, var(--primary-black) 100%);
+            border: 2px solid var(--silver-gray);
+            color: #ffffff;
+            padding: 1.2rem 2.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-quote:hover::before {
+            left: 100%;
+        }
+
+        .btn-quote:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(192, 192, 192, 0.5);
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--silver-gray) 0%, #ffffff 50%, var(--silver-gray) 100%);
+            color: var(--primary-black);
+        }
+
+        /* Animação pulsante para chamar atenção */
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 8px 25px rgba(192, 192, 192, 0.3);
+            }
+            50% {
+                box-shadow: 0 8px 25px rgba(192, 192, 192, 0.6);
+            }
+            100% {
+                box-shadow: 0 8px 25px rgba(192, 192, 192, 0.3);
+            }
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-black);
+            letter-spacing: -0.02em;
+        }
+
+        .services-section {
+            padding: 6rem 0;
+            background: var(--primary-white);
+        }
+
+        .service-card {
+            background: var(--primary-white);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--silver);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary-white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-description {
+            color: var(--charcoal);
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-section {
+            padding: 6rem 0;
+            background: var(--gradient-primary);
+            color: var(--primary-white);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text h2 {
+            color: var(--primary-white);
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--silver);
+        }
+
+        .about-image img {
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Reorganizando seções - Solicite Serviços primeiro */
+        .request-service-section {
+            padding: 6rem 0;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .request-service-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23C0C0C0" opacity="0.1"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .service-request-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 3rem;
+            border: 1px solid rgba(192, 192, 192, 0.2);
+        }
+
+        .careers-section {
+            padding: 6rem 0;
+            background: var(--primary-white);
+        }
+
+        .career-benefits {
+            background: var(--primary-white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--silver);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(192, 192, 192, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(192, 192, 192, 0.1);
+            transform: translateX(10px);
+        }
+
+        .benefit-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--primary-white);
+            font-size: 1.2rem;
+        }
+
+        .career-form {
+            background: var(--primary-white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--silver);
+        }
+
+        .form-control, .form-select {
+            border: 2px solid var(--silver);
+            border-radius: 15px;
+            padding: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: var(--primary-white);
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-black);
+            box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+            background: var(--primary-white);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-white);
+        }
+
+        .footer-link {
+            color: var(--silver);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-white);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-black);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: var(--primary-black);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .service-request-form,
+            .career-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-building me-2"></i>
+                Specialized
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre</a>
+                    </li>
+                    <!-- Reorganizando ordem do menu - Solicite Serviços primeiro -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#request-service">Solicite Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#careers">Trabalhe Conosco</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Excelência em<br>Gestão Predial</h1>
+                        <p class="hero-subtitle">Serviços especializados para condomínios com qualidade premium e tecnologia de ponta</p>
+                        <div class="hero-buttons mt-4">
+                            <!-- Alterando classe do botão Nossos Serviços para btn-quote btn-pulse -->
+                            <a href="#services" class="btn btn-quote btn-pulse me-3">Nossos Serviços</a>
+                            <!-- Aplicando nova classe btn-quote e animação pulse -->
+                            <a href="#request-service" class="btn btn-quote btn-pulse">Solicite Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <img src="/placeholder.svg?height=600&width=500" alt="Equipe Specialized" class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                        <h3 class="service-title">Limpeza e Conservação</h3>
+                        <p class="service-description">Serviços completos de limpeza predial com equipamentos modernos e produtos ecológicos de alta qualidade.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="service-title">Manutenção Predial</h3>
+                        <p class="service-description">Manutenção preventiva e corretiva de sistemas elétricos, hidráulicos e estruturais do seu condomínio.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service-title">Segurança e Portaria</h3>
+                        <p class="service-description">Serviços de portaria 24h e segurança patrimonial com profissionais treinados e certificados.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="service-title">Jardinagem</h3>
+                        <p class="service-description">Cuidado e manutenção de áreas verdes, jardins e paisagismo para manter seu condomínio sempre belo.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3 class="service-title">Gestão Administrativa</h3>
+                        <p class="service-description">Administração completa do condomínio com relatórios detalhados e gestão financeira transparente.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 class="service-title">Serviços Técnicos</h3>
+                        <p class="service-description">Assistência técnica especializada em elevadores, sistemas de segurança e automação predial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title text-start">Sobre a Specialized</h2>
+                    <p class="lead mb-4">Com mais de 15 anos de experiência no mercado, a Specialized é referência em serviços para condomínios, oferecendo soluções completas e personalizadas.</p>
+                    
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-3 fs-4"></i>
+                                <span class="fw-bold">Equipe Qualificada</span>
+                            </div>
+                            <p>Profissionais treinados e certificados para garantir a excelência em todos os serviços.</p>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-clock text-primary me-3 fs-4"></i>
+                                <span class="fw-bold">Atendimento 24h</span>
+                            </div>
+                            <p>Suporte e atendimento disponível 24 horas por dia, 7 dias por semana.</p>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-award text-warning me-3 fs-4"></i>
+                                <span class="fw-bold">Certificações</span>
+                            </div>
+                            <p>Empresa certificada com todas as licenças e seguros necessários.</p>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-handshake text-info me-3 fs-4"></i>
+                                <span class="fw-bold">Compromisso</span>
+                            </div>
+                            <p>Compromisso total com a satisfação e bem-estar dos moradores.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="/placeholder.svg?height=500&width=600" alt="Equipe Specialized" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movendo seção Solicite Serviços para antes de Trabalhe Conosco -->
+    <!-- Request Service Section -->
+    <section id="request-service" class="request-service-section">
+        <div class="container">
+            <h2 class="section-title text-white">Solicite Nossos Serviços</h2>
+            <p class="text-center text-white-50 mb-5 lead mono-text">Preencha o formulário abaixo e receba um orçamento personalizado em até 24 horas</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="service-request-form">
+                        <form id="serviceRequestForm">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label for="clientName" class="form-label text-white">Nome do Responsável</label>
+                                    <input type="text" class="form-control" id="clientName" placeholder="Nome completo" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="clientEmail" class="form-label text-white">Email</label>
+                                    <input type="email" class="form-control" id="clientEmail" placeholder="seu@email.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="clientPhone" class="form-label text-white">Telefone</label>
+                                    <input type="tel" class="form-control" id="clientPhone" placeholder="(11) 99999-9999" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="condominiumName" class="form-label text-white">Nome do Condomínio</label>
+                                    <input type="text" class="form-control" id="condominiumName" placeholder="Nome do condomínio" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="serviceType" class="form-label text-white">Tipo de Serviço</label>
+                                    <select class="form-select" id="serviceType" required>
+                                        <option value="">Selecione o serviço</option>
+                                        <option value="limpeza">Limpeza e Conservação</option>
+                                        <option value="manutencao">Manutenção Predial</option>
+                                        <option value="seguranca">Segurança e Portaria</option>
+                                        <option value="jardinagem">Jardinagem</option>
+                                        <option value="administracao">Gestão Administrativa</option>
+                                        <option value="tecnico">Serviços Técnicos</option>
+                                        <option value="completo">Pacote Completo</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="urgency" class="form-label text-white">Urgência</label>
+                                    <select class="form-select" id="urgency" required>
+                                        <option value="">Selecione a urgência</option>
+                                        <option value="baixa">Baixa - Até 7 dias</option>
+                                        <option value="media">Média - Até 3 dias</option>
+                                        <option value="alta">Alta - Até 24 horas</option>
+                                        <option value="emergencia">Emergência - Imediato</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="serviceDescription" class="form-label text-white">Descrição Detalhada</label>
+                                    <textarea class="form-control" id="serviceDescription" rows="4" placeholder="Descreva detalhadamente o serviço necessário, área do condomínio, frequência desejada, etc." required></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="condominiumSize" class="form-label text-white">Tamanho do Condomínio</label>
+                                    <select class="form-select" id="condominiumSize">
+                                        <option value="">Selecione o tamanho</option>
+                                        <option value="pequeno">Pequeno (até 50 unidades)</option>
+                                        <option value="medio">Médio (51 a 150 unidades)</option>
+                                        <option value="grande">Grande (151 a 300 unidades)</option>
+                                        <option value="extra-grande">Extra Grande (mais de 300 unidades)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="budget" class="form-label text-white">Orçamento Estimado</label>
+                                    <select class="form-select" id="budget">
+                                        <option value="">Faixa de orçamento</option>
+                                        <option value="ate-5k">Até R$ 5.000</option>
+                                        <option value="5k-15k">R$ 5.000 - R$ 15.000</option>
+                                        <option value="15k-30k">R$ 15.000 - R$ 30.000</option>
+                                        <option value="acima-30k">Acima de R$ 30.000</option>
+                                        <option value="nao-definido">Não definido</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="serviceTerms" required>
+                                        <label class="form-check-label text-white" for="serviceTerms">
+                                            Autorizo o contato da Specialized para apresentação da proposta comercial
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <!-- Alterando classe de btn-custom para btn-quote btn-pulse para ficar igual ao botão do início -->
+                                    <button type="submit" class="btn btn-quote btn-pulse btn-lg px-5">
+                                        <i class="fas fa-calculator me-2"></i>
+                                        Solicitar Orçamento
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 text-center">
+                    <div class="text-white mb-3">
+                        <i class="fas fa-clock fs-1 text-info"></i>
+                    </div>
+                    <h4 class="text-white">Resposta Rápida</h4>
+                    <p class="text-white-50 mono-text">Orçamento em até 24 horas</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="text-white mb-3">
+                        <i class="fas fa-shield-check fs-1 text-success"></i>
+                    </div>
+                    <h4 class="text-white">Sem Compromisso</h4>
+                    <p class="text-white-50 mono-text">Orçamento gratuito e sem obrigações</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="text-white mb-3">
+                        <i class="fas fa-star fs-1 text-warning"></i>
+                    </div>
+                    <h4 class="text-white">Qualidade Garantida</h4>
+                    <p class="text-white-50 mono-text">15 anos de experiência no mercado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="careers-section">
+        <div class="container">
+            <h2 class="section-title">Trabalhe Conosco</h2>
+            <p class="text-center text-muted mb-5 lead mono-text">Faça parte da nossa equipe e construa uma carreira sólida no setor de serviços prediais</p>
+            
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="career-benefits">
+                        <h3 class="mb-4">Por que trabalhar na Specialized?</h3>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Salário Competitivo</h5>
+                                <p class="mb-0 text-muted">Remuneração acima da média do mercado</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Treinamento Contínuo</h5>
+                                <p class="mb-0 text-muted">Capacitação e desenvolvimento profissional</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Plano de Saúde</h5>
+                                <p class="mb-0 text-muted">Assistência médica e odontológica</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Crescimento Profissional</h5>
+                                <p class="mb-0 text-muted">Oportunidades de promoção interna</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Ambiente Colaborativo</h5>
+                                <p class="mb-0 text-muted">Equipe unida e ambiente de trabalho saudável</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="career-form">
+                        <h3 class="mb-4">Envie seu Currículo</h3>
+                        <form id="careerForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="candidateName" class="form-label">Nome Completo</label>
+                                    <input type="text" class="form-control" id="candidateName" placeholder="Seu nome completo" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="candidateEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="candidateEmail" placeholder="seu@email.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="candidatePhone" class="form-label">Telefone</label>
+                                    <input type="tel" class="form-control" id="candidatePhone" placeholder="(11) 99999-9999" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="position" class="form-label">Área de Interesse</label>
+                                    <select class="form-select" id="position" required>
+                                        <option value="">Selecione a área</option>
+                                        <option value="limpeza">Limpeza e Conservação</option>
+                                        <option value="manutencao">Manutenção Predial</option>
+                                        <option value="seguranca">Segurança e Portaria</option>
+                                        <option value="jardinagem">Jardinagem</option>
+                                        <option value="administracao">Administração</option>
+                                        <option value="supervisao">Supervisão</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="experience" class="form-label">Experiência Profissional</label>
+                                    <textarea class="form-control" id="experience" rows="4" placeholder="Descreva sua experiência na área..." required></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="availability" class="form-label">Disponibilidade</label>
+                                    <select class="form-select" id="availability" required>
+                                        <option value="">Selecione</option>
+                                        <option value="imediata">Imediata</option>
+                                        <option value="15-dias">15 dias</option>
+                                        <option value="30-dias">30 dias</option>
+                                        <option value="a-combinar">A combinar</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="salary" class="form-label">Pretensão Salarial</label>
+                                    <select class="form-select" id="salary">
+                                        <option value="">Selecione</option>
+                                        <option value="ate-2k">Até R$ 2.000</option>
+                                        <option value="2k-3k">R$ 2.000 - R$ 3.000</option>
+                                        <option value="3k-5k">R$ 3.000 - R$ 5.000</option>
+                                        <option value="acima-5k">Acima de R$ 5.000</option>
+                                        <option value="a-combinar">A combinar</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="careerTerms" required>
+                                        <label class="form-check-label" for="careerTerms">
+                                            Autorizo o uso dos meus dados para processo seletivo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-custom btn-lg px-5">
+                                        <i class="fas fa-paper-plane me-2"></i>
+                                        Enviar Candidatura
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="service-title">Telefone</h3>
+                        <p class="service-description mono-text">
+                            <strong>(11) 3456-7890</strong><br>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="service-title">Email</h3>
+                        <p class="service-description mono-text">
+                            <strong>contato@specialized.com.br</strong><br>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="service-title">Endereço</h3>
+                        <p class="service-description mono-text">
+                            <strong>Av. Paulista, 1000</strong><br>
+                            <strong>São Paulo - SP</strong><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-section">
+                        <h3 class="footer-title">
+                            <i class="fas fa-building me-2"></i>
+                            Specialized
+                        </h3>
+                        <p class="text-white-50 mb-4">Excelência em serviços para condomínios há mais de 15 anos. Sua tranquilidade é nossa prioridade.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Serviços</h4>
+                        <a href="#" class="footer-link">Limpeza</a>
+                        <a href="#" class="footer-link">Manutenção</a>
+                        <a href="#" class="footer-link">Segurança</a>
+                        <a href="#" class="footer-link">Jardinagem</a>
+                        <a href="#" class="footer-link">Administração</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Links Úteis</h4>
+                        <a href="#about" class="footer-link">Sobre Nós</a>
+                        <!-- Atualizando ordem dos links no rodapé -->
+                        <a href="#request-service" class="footer-link">Solicite Orçamento</a>
+                        <a href="#careers" class="footer-link">Trabalhe Conosco</a>
+                        <a href="#contact" class="footer-link">Contato</a>
+                        <a href="#" class="footer-link">Política de Privacidade</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-section">
+                        <h4 class="footer-title">Contato</h4>
+                        <p class="text-white-50 mb-2 mono-text">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Av. Paulista, 1000 - São Paulo/SP
+                        </p>
+                        <p class="text-white-50 mb-2 mono-text">
+                            <i class="fas fa-phone me-2"></i>
+                            (11) 3456-7890
+                        </p>
+                        <p class="text-white-50 mb-2 mono-text">
+                            <i class="fas fa-envelope me-2"></i>
+                            contato@specialized.com.br
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="border-color: var(--silver);">
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-white-50 mb-0 mono-text">
+                        &copy; 2024 Specialized Serviços para Condomínios. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511987654321" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.getElementById('serviceRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coletando dados do formulário de solicitação de serviço
+            const clientName = document.getElementById('clientName').value;
+            const clientEmail = document.getElementById('clientEmail').value;
+            const clientPhone = document.getElementById('clientPhone').value;
+            const condominiumName = document.getElementById('condominiumName').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const urgency = document.getElementById('urgency').value;
+            const serviceDescription = document.getElementById('serviceDescription').value;
+            const condominiumSize = document.getElementById('condominiumSize').value;
+            const budget = document.getElementById('budget').value;
+            
+            // Formatando mensagem para WhatsApp
+            let message = `🏢 *SOLICITAÇÃO DE ORÇAMENTO*\n\n`;
+            message += `👤 *Cliente:* ${clientName}\n`;
+            message += `📧 *Email:* ${clientEmail}\n`;
+            message += `📱 *Telefone:* ${clientPhone}\n`;
+            message += `🏘️ *Condomínio:* ${condominiumName}\n`;
+            message += `🔧 *Serviço:* ${serviceType}\n`;
+            message += `⚡ *Urgência:* ${urgency}\n`;
+            if (condominiumSize) message += `📏 *Tamanho:* ${condominiumSize}\n`;
+            if (budget) message += `💰 *Orçamento:* ${budget}\n`;
+            message += `📝 *Descrição:* ${serviceDescription}`;
+            
+            // Número do WhatsApp da empresa (substitua pelo número real)
+            const whatsappNumber = '5511999999999'; // Substitua pelo número real
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Abrindo WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Resetando formulário
+            this.reset();
+        });
+
+        document.getElementById('careerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Coletando dados do formulário de trabalhe conosco
+            const candidateName = document.getElementById('candidateName').value;
+            const candidateEmail = document.getElementById('candidateEmail').value;
+            const candidatePhone = document.getElementById('candidatePhone').value;
+            const position = document.getElementById('position').value;
+            const experience = document.getElementById('experience').value;
+            const availability = document.getElementById('availability').value;
+            const salary = document.getElementById('salary').value;
+            
+            // Formatando mensagem para WhatsApp
+            let message = `💼 *CANDIDATURA - TRABALHE CONOSCO*\n\n`;
+            message += `👤 *Nome:* ${candidateName}\n`;
+            message += `📧 *Email:* ${candidateEmail}\n`;
+            message += `📱 *Telefone:* ${candidatePhone}\n`;
+            message += `🎯 *Área de Interesse:* ${position}\n`;
+            message += `📅 *Disponibilidade:* ${availability}\n`;
+            if (salary) message += `💰 *Pretensão Salarial:* ${salary}\n`;
+            message += `📋 *Experiência:* ${experience}`;
+            
+            // Número do WhatsApp da empresa (substitua pelo número real)
+            const whatsappNumber = '5511999999999'; // Substitua pelo número real
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Abrindo WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Resetando formulário
+            this.reset();
+        });
+
+        // Loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Enhanced hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Form validation enhancement
+        document.querySelectorAll('input, select, textarea').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = 'var(--primary-black)';
+                this.style.boxShadow = '0 0 0 0.2rem rgba(0, 0, 0, 0.1)';
+            });
+            
+            input.addEventListener('blur', function() {
+                if (this.value) {
+                    this.style.borderColor = 'var(--silver)';
+                } else {
+                    this.style.borderColor = 'var(--silver)';
+                }
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
