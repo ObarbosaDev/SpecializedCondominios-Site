@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Define a codificação de caracteres como UTF-8 -->
     <meta charset="UTF-8">
+
+    <!-- Configura a página para ser responsiva em diferentes dispositivos -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descrição do site para mecanismos de busca (SEO) -->
     <meta name="description" content="Specialized Serviços - Excelência em Terceirização no Distrito Federal. Portaria, Limpeza, Jardinagem e Manutenções Gerais.">
+
+    <!-- Palavras-chave para SEO -->
     <meta name="keywords" content="portaria, limpeza, jardinagem, manutencao, terceirizacao, Brasilia, DF">
+
+    <!-- Autor do site -->
     <meta name="author" content="Specialized Serviços">
     
+    <!-- Configurações de compartilhamento em redes sociais (Open Graph) -->
     <meta property="og:title" content="Specialized Serviços - Excelência em Terceirização">
     <meta property="og:description" content="Portaria, Limpeza, Jardinagem e Manutenções Gerais no DF.">
     <meta property="og:type" content="website">
     
+    <!-- Título exibido na aba do navegador -->
     <title>Specialized Serviços | Portaria, Limpeza, Jardinagem e Manutenções</title>
     
+    <!-- Ícone do site (favicon) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
     
+    <!-- Pré-conexão com servidores de fontes para melhorar performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Importação de fontes do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Importação do CSS do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Importação dos ícones do Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Biblioteca de animações AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <!-- Biblioteca LightGallery para galeria de imagens -->
     <link href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css" rel="stylesheet">
     
+    <!-- CSS personalizado do projeto -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="loading">
+    <!-- Preloader exibido enquanto o site carrega -->
     <div id="preloader">
         <div class="preloader-content">
+            <!-- Logo do preloader -->
             <div class="preloader-logo">
                 <img src="img/logo.png" alt="Specialized Serviços Logo" style="max-width: 250px; height: auto; margin-bottom: 20px;">
             </div>
+
+            <!-- Estatísticas animadas do preloader -->
             <div class="preloader-stats">
                 <div class="stat-item">
                     <span class="stat-number" data-target="100">0</span>
@@ -49,22 +74,32 @@
                     <span class="stat-label">% Excelência</span>
                 </div>
             </div>
+
+            <!-- Barra de progresso do preloader -->
             <div class="preloader-bar">
                 <div class="preloader-progress"></div>
             </div>
+
+            <!-- Texto institucional do preloader -->
             <p class="preloader-text">Compromisso com a Excelência e Profissionalismo em Terceirização</p>
         </div>
     </div>
 
+    <!-- Navbar fixa no topo -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
+            <!-- Logo da navbar -->
             <a class="navbar-brand" href="#home">
                 <img src="img/navbar.png" alt="Specialized Serviços" style="height: 50px; width: auto;">
             </a>
+
+            <!-- Badge exibido apenas em telas grandes -->
             <div class="badge-years d-none d-lg-flex">
                 <i class="fas fa-award"></i>
                 <span>+ Excelência</span>
             </div>
+
+            <!-- Botão de menu para dispositivos móveis -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="toggler-icon">
                     <span></span>
@@ -72,6 +107,8 @@
                     <span></span>
                 </span>
             </button>
+
+            <!-- Links de navegação -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="#home">Início</a></li>
@@ -82,6 +119,8 @@
                     <li class="nav-item"><a class="nav-link" href="#carreiras">Carreiras</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                 </ul>
+
+                <!-- Botão de orçamento via WhatsApp -->
                 <a href="https://wa.me/5561981999789?text=Ola! Gostaria de solicitar um orcamento." class="btn btn-orcamento" target="_blank">
                     <i class="fab fa-whatsapp"></i>
                     <span>Orçamento</span>
@@ -90,30 +129,43 @@
         </div>
     </nav>
 
+    <!-- Seção principal (Hero Section) -->
     <section id="home" class="hero-section">
+        <!-- Elementos visuais de fundo -->
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-pattern"></div>
+
         <div class="container">
             <div class="row align-items-center min-vh-100">
+                <!-- Conteúdo principal do hero -->
                 <div class="col-lg-7">
                     <div class="hero-content" data-aos="fade-up">
+                        <!-- Selo de destaque -->
                         <span class="hero-badge">
                             <i class="fas fa-star"></i>
                             Excelência em Terceirização
                         </span>
+
+                        <!-- Título principal -->
                         <h1 class="hero-title">
                             Especialistas em Cuidar do <span class="text-accent">Seu Patrimônio</span>
                         </h1>
+
+                        <!-- Subtítulo -->
                         <p class="hero-subtitle">
                             <span class="highlight">Equipe com Experiência de Mercado no DF</span>
                         </p>
+
+                        <!-- Lista de serviços -->
                         <p class="hero-services">
                             Portaria <span class="dot"></span> 
                             Limpeza <span class="dot"></span> 
                             Jardinagem <span class="dot"></span> 
                             Manutenções Gerais
                         </p>
+
+                        <!-- Botões de ação -->
                         <div class="hero-buttons">
                             <a href="https://wa.me/5561981999789?text=Ola! Gostaria de solicitar um orcamento." class="btn btn-primary-custom" target="_blank">
                                 <i class="fab fa-whatsapp"></i>
@@ -124,7 +176,8 @@
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
-                        
+
+                        <!-- Estatísticas do hero -->
                         <div class="hero-stats pt-5">
                             <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
                                 <span class="stat-number counter" data-target="100">0</span>
@@ -149,12 +202,16 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Card de contato (apenas desktop) -->
                 <div class="col-lg-5 d-none d-lg-block">
                     <div class="hero-contact-card" data-aos="fade-left" data-aos-delay="300">
                         <div class="contact-card-header">
                             <i class="fas fa-headset"></i>
                             <h3>Fale Conosco Agora</h3>
                         </div>
+
+                        <!-- Contatos -->
                         <div class="contact-card-body">
                             <a href="https://wa.me/5561993566227" class="contact-item whatsapp" target="_blank">
                                 <div class="contact-icon">
@@ -165,6 +222,7 @@
                                     <span class="contact-value">(61) 9 9356-6227</span>
                                 </div>
                             </a>
+
                             <a href="https://wa.me/5561981999789" class="contact-item whatsapp" target="_blank">
                                 <div class="contact-icon">
                                     <i class="fab fa-whatsapp"></i>
@@ -174,6 +232,7 @@
                                     <span class="contact-value">(61) 9 8199-9789</span>
                                 </div>
                             </a>
+
                             <a href="mailto:specializedservicos@gmail.com" class="contact-item email">
                                 <div class="contact-icon">
                                     <i class="fas fa-envelope"></i>
@@ -184,6 +243,8 @@
                                 </div>
                             </a>
                         </div>
+
+                        <!-- Rodapé do card -->
                         <div class="contact-card-footer">
                             <div class="badge-24h">
                                 <i class="fas fa-clock"></i>
@@ -196,34 +257,56 @@
         </div>
     </section>
 
-<!-- ============ SOBRE NOS ============ -->
+<!-- ============ SEÇÃO SOBRE NÓS ============ -->
 <section id="sobre" class="section-padding bg-light">
     <div class="container">
         <div class="row align-items-center">
+            <!-- Coluna de imagens institucionais -->
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="about-images">
+                    <!-- Imagem principal -->
                     <div class="about-img-main">
                         <img src="img/servico1.jpeg" alt="Equipe Specialized" class="img-fluid rounded-custom">
                     </div>
+                    <!-- Imagem secundária -->
                     <div class="about-img-secondary">
                         <img src="img/servico2.jpeg" alt="Trabalho em equipe" class="img-fluid rounded-custom">
                     </div>
+                    <!-- Selo de destaque -->
                     <div class="about-badge">
                         <span class="badge-number">100%</span>
                         <span class="badge-text">Excelência</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Coluna de conteúdo institucional -->
             <div class="col-lg-6" data-aos="fade-left">
                 <div class="about-content">
+                    <!-- Identificador da seção -->
                     <span class="section-badge">Quem Somos ?</span>
-                    <h2 class="section-title">Sua Parceira Estratégica em <span class="text-accent">Gestão de Facilidades</span></h2>
+
+                    <!-- Título da seção -->
+                    <h2 class="section-title">
+                        Sua Parceira Estratégica em <span class="text-accent">Gestão de Facilidades</span>
+                    </h2>
+
+                    <!-- Texto institucional principal -->
                     <p class="about-text">
-                        <strong>A Specialized Serviços surge no mercado do Distrito Federal com a missão de modernizar a terceirização de serviços. Unimos tecnologia, processos ágeis e uma gestão humanizada para garantir que o seu patrimônio receba o cuidado que merece.
+                        <strong>
+                            A Specialized Serviços surge no mercado do Distrito Federal com a missão de modernizar a terceirização de serviços.
+                            Unimos tecnologia, processos ágeis e uma gestão humanizada para garantir que o seu patrimônio receba o cuidado que merece.
+                        </strong>
                     </p>
+
+                    <!-- Texto institucional complementar -->
                     <p class="about-text">
-                        Nossa estrutura foi desenhada para atender demandas de alta complexidade, oferecendo uma operação robusta e preparada para o crescimento do seu negócio. Mais do que prestadores de serviço, somos o braço direito de síndicos e gestores que não abrem mão da excelência e da transparência em cada detalhe.
+                        Nossa estrutura foi desenhada para atender demandas de alta complexidade, oferecendo uma operação robusta e preparada
+                        para o crescimento do seu negócio. Mais do que prestadores de serviço, somos o braço direito de síndicos e gestores
+                        que não abrem mão da excelência e da transparência em cada detalhe.
                     </p>
+
+                    <!-- Lista de diferenciais -->
                     <div class="about-features">
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
@@ -245,656 +328,814 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Missao, Visao, Valores -->
+
+        <!-- Missão, Visão e Valores -->
         <div class="row mt-5 pt-5">
+            <!-- Missão -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="mvv-card">
                     <div class="mvv-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Excelência Operacional</h3>
-                    <p>Estabelecer o padrão máximo de eficiência operacional em terceirização, blindando o patrimônio de nossos clientes com soluções de alta performance e rigor técnico absoluto.</p>
+                    <p>
+                        Estabelecer o padrão máximo de eficiência operacional em terceirização, blindando o patrimônio de nossos clientes
+                        com soluções de alta performance e rigor técnico absoluto.
+                    </p>
                 </div>
             </div>
+
+            <!-- Visão -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="mvv-card">
                     <div class="mvv-icon">
                         <i class="fas fa-eye"></i>
                     </div>
                     <h3>Referência Incontestável</h3>
-                    <p>Consolidar a Specialized como a autoridade definitiva em gestão de facilidades no Brasil, sendo a primeira escolha para operações que exigem precisão, tecnologia de ponta e zero falhas.</p>
+                    <p>
+                        Consolidar a Specialized como a autoridade definitiva em gestão de facilidades no Brasil, sendo a primeira escolha
+                        para operações que exigem precisão, tecnologia de ponta e zero falhas.
+                    </p>
                 </div>
             </div>
+
+            <!-- Valores -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="mvv-card">
                     <div class="mvv-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>Cultura de Elite</h3>
-                    <p>Lealdade inegociável, transparência radical, disciplina operacional e a busca implacável pela perfeição em cada detalhe da nossa entrega.</p>
+                    <p>
+                        Lealdade inegociável, transparência radical, disciplina operacional e a busca implacável pela perfeição
+                        em cada detalhe da nossa entrega.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-    <!-- ============ SERVICOS ============ -->
-    <section id="servicos" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="section-badge">Gama de Serviços</span>
-                <h2 class="section-title">Gestão Estratégica e Blindagem do <span class="text-accent">Seu Patrimônio</span></h2>
-                <p class="section-subtitle">Operação de elite com integração total de serviços. Entregamos máxima eficiência, tecnologia de ponta e o rigor técnico que grandes estruturas exigem.</p>
+<!-- ============ SEÇÃO DE SERVIÇOS ============ -->
+<section id="servicos" class="section-padding">
+    <div class="container">
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-badge">Gama de Serviços</span>
+            <h2 class="section-title">
+                Gestão Estratégica e Blindagem do <span class="text-accent">Seu Patrimônio</span>
+            </h2>
+            <p class="section-subtitle">
+                Operação de elite com integração total de serviços. Entregamos máxima eficiência,
+                tecnologia de ponta e o rigor técnico que grandes estruturas exigem.
+            </p>
+        </div>
+
+        <!-- Grid de serviços -->
+        <div class="row g-4">
+            <!-- Serviço: Portaria -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="service-card-inner">
+                        <!-- Frente do card -->
+                        <div class="service-front">
+                            <div class="service-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Portaria e Controle de Acesso</h3>
+                            <p>Segurança inabalável com protocolo de tolerância zero a falhas.</p>
+                        </div>
+                        <!-- Verso do card -->
+                        <div class="service-back">
+                            <h4>Inclusos:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Triagem Estratégica</li>
+                                <li><i class="fas fa-check"></i> Monitoramento Inteligente (CFTV)</li>
+                                <li><i class="fas fa-check"></i> Rondas Preventivas</li>
+                                <li><i class="fas fa-check"></i> Gestão de Crises</li>
+                                <li><i class="fas fa-check"></i> Logística de Encomendas</li>
+                            </ul>
+                            <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para PORTARIA." class="btn btn-service" target="_blank">
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="row g-4">
-                <!-- Portaria -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <h3>Portaria e Controle de Acesso</h3>
-                                <p>Segurança inabalável com protocolo de tolerância zero a falhas.</p>
+
+            <!-- Serviço: Limpeza -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-icon">
+                                <i class="fas fa-broom"></i>
                             </div>
-                            <div class="service-back">
-                                <h4>Inclusos:</h4>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Triagem Estratégica</li>
-                                    <li><i class="fas fa-check"></i> Monitoramento Inteligente (CFTV)</li>
-                                    <li><i class="fas fa-check"></i> Rondas Preventivas</li>
-                                    <li><i class="fas fa-check"></i> Gestão de Crises</li>
-                                    <li><i class="fas fa-check"></i> Logística de Encomendas</li>
-                                </ul>
-                                <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para PORTARIA." class="btn btn-service" target="_blank">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
+                            <h3>Higienização de Alta Performance</h3>
+                            <p>Limpeza técnica profunda com cronograma rigoroso e resultados impecáveis.</p>
+                        </div>
+                        <div class="service-back">
+                            <h4>Inclusos:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Higienização Avançada</li>
+                                <li><i class="fas fa-check"></i> Cronograma Operacional</li>
+                                <li><i class="fas fa-check"></i> Tratamento Total</li>
+                                <li><i class="fas fa-check"></i> Pós-Obra Crítico</li>
+                                <li><i class="fas fa-check"></i> Insumos de Alta Performance</li>
+                            </ul>
+                            <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para LIMPEZA." class="btn btn-service" target="_blank">
+                                Solicitar Orçamento
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Limpeza -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-broom"></i>
-                                </div>
-                                <h3>Higienização de Alta Performance</h3>
-                                <p>Limpeza técnica profunda com cronograma rigoroso e resultados impecáveis.</p>
+            </div>
+
+            <!-- Serviço: Jardinagem -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-icon">
+                                <i class="fas fa-leaf"></i>
                             </div>
-                            <div class="service-back">
-                                <h4>Inclusos:</h4>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Higienização Avançada</li>
-                                    <li><i class="fas fa-check"></i> Cronograma Operacional</li>
-                                    <li><i class="fas fa-check"></i> Tratamento Total</li>
-                                    <li><i class="fas fa-check"></i> Pós-Obra Crítico</li>
-                                    <li><i class="fas fa-check"></i> Insumos de Alta Performance</li>
-                                </ul>
-                                <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para LIMPEZA." class="btn btn-service" target="_blank">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
+                            <h3>Engenharia de Paisagismo</h3>
+                            <p>Valorização estética e vitalidade biológica para áreas verdes de alto padrão.</p>
+                        </div>
+                        <div class="service-back">
+                            <h4>Inclusos:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Revitalização de Ecossistemas</li>
+                                <li><i class="fas fa-check"></i> Poda Fitossanitária</li>
+                                <li><i class="fas fa-check"></i> Nutrição de Solo Avançada</li>
+                                <li><i class="fas fa-check"></i> Controle de Pragas</li>
+                                <li><i class="fas fa-check"></i> Paisagismo</li>
+                            </ul>
+                            <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para JARDINAGEM." class="btn btn-service" target="_blank">
+                                Solicitar Orçamento
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Jardinagem -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <h3>Engenharia de Paisagismo</h3>
-                                <p>Valorização estética e vitalidade biológica para áreas verdes de alto padrão.</p>
+            </div>
+
+            <!-- Serviço: Manutenções Gerais -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-card">
+                    <div class="service-card-inner">
+                        <div class="service-front">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
                             </div>
-                            <div class="service-back">
-                                <h4>Inclusos:</h4>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Revitalização de Ecossistemas</li>
-                                    <li><i class="fas fa-check"></i> Poda Fitossanitária</li>
-                                    <li><i class="fas fa-check"></i> Nutrição de Solo Avançada</li>
-                                    <li><i class="fas fa-check"></i> Controle de Pragas</li>
-                                    <li><i class="fas fa-check"></i> Paisagismo</li>
-                                </ul>
-                                <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para JARDINAGEM." class="btn btn-service" target="_blank">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
+                            <h3>Manutenção Preventiva</h3>
+                            <p>Continuidade operacional absoluta através de protocolos de preservação predial.</p>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Manutencoes -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-card">
-                        <div class="service-card-inner">
-                            <div class="service-front">
-                                <div class="service-icon">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <h3>Manutenção Preventiva</h3>
-                                <p>Continuidade operacional absoluta através de protocolos de preservação predial.</p>
-                            </div>
-                            <div class="service-back">
-                                <h4>Inclusos:</h4>
-                                <ul>
-                                    <li><i class="fas fa-check"></i> Sistemas Elétricos de Alta Disponibilidade</li>
-                                    <li><i class="fas fa-check"></i> Hidráulica de Precisão</li>
-                                    <li><i class="fas fa-check"></i> Revitalização Patrimonial Estética</li>
-                                    <li><i class="fas fa-check"></i> Intervenções Corretivas</li>
-                                    <li><i class="fas fa-check"></i> Plano de Manutenção</li>
-                                </ul>
-                                <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para MANUTENÇÕES GERAIS." class="btn btn-service" target="_blank">
-                                    Solicitar Orçamento
-                                </a>
-                            </div>
+                        <div class="service-back">
+                            <h4>Inclusos:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Sistemas Elétricos de Alta Disponibilidade</li>
+                                <li><i class="fas fa-check"></i> Hidráulica de Precisão</li>
+                                <li><i class="fas fa-check"></i> Revitalização Patrimonial Estética</li>
+                                <li><i class="fas fa-check"></i> Intervenções Corretivas</li>
+                                <li><i class="fas fa-check"></i> Plano de Manutenção</li>
+                            </ul>
+                            <a href="https://wa.me/5561981999789?text=Olá! Gostaria de orçamento para MANUTENÇÕES GERAIS." class="btn btn-service" target="_blank">
+                                Solicitar Orçamento
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- ============ GALERIA ============ -->
-    <section id="galeria" class="section-padding bg-dark">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="section-badge">Nosso Portfolio</span>
-                <h2 class="section-title text-white"><span class="text-accent">Portfólio Operacional</span></h2>
-                <p class="section-subtitle text-light">A evidência visual do nosso compromisso com a perfeição. Processos validados, equipes coordenadas e resultados que definem o novo padrão do mercado.</p>
-            </div>
-            
-            <!-- Filter Buttons -->
-            <div class="gallery-filters" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="portaria">Portaria</button>
-                <button class="filter-btn" data-filter="limpeza">Limpeza</button>
-                <button class="filter-btn" data-filter="jardinagem">Jardinagem</button>
-                <button class="filter-btn" data-filter="manutencao">Manutenção</button>
-            </div>
-            
-<!-- Gallery Grid -->
-<div class="row g-4" id="lightgallery" data-aos="fade-up">
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="portaria">
-        <a href="img/galeria1.png" class="gallery-link">
-            <div class="gallery-card">
-                <img src="img/galeria1.png" alt="Portaria" class="img-fluid">
-                <div class="gallery-overlay">
-                    <span class="gallery-category">Portaria</span>
-                    <h4>Portaria Residencial</h4>
-                    <i class="fas fa-search-plus"></i>
-                </div>
-            </div>
-        </a>
     </div>
+</section>
 
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="manutencao">
-        <a href="img/galeria2.png" class="gallery-link">
-            <div class="gallery-card">
-                <img src="img/galeria2.png" alt="Manuteção" class="img-fluid">
-                <div class="gallery-overlay">
-                    <span class="gallery-category">Manutenção</span>
-                    <h4>Revitalização de Fachada</h4>
-                    <i class="fas fa-search-plus"></i>
-                </div>
+<!-- ============ SEÇÃO GALERIA ============ -->
+<section id="galeria" class="section-padding bg-dark">
+    <div class="container">
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-badge">Nosso Portfólio</span>
+            <h2 class="section-title text-white">
+                <span class="text-accent">Portfólio Operacional</span>
+            </h2>
+            <p class="section-subtitle text-light">
+                A evidência visual do nosso compromisso com a perfeição. Processos validados,
+                equipes coordenadas e resultados que definem o novo padrão do mercado.
+            </p>
+        </div>
+        
+        <!-- Botões de filtro da galeria -->
+        <div class="gallery-filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="portaria">Portaria</button>
+            <button class="filter-btn" data-filter="limpeza">Limpeza</button>
+            <button class="filter-btn" data-filter="jardinagem">Jardinagem</button>
+            <button class="filter-btn" data-filter="manutencao">Manutenção</button>
+        </div>
+        
+        <!-- Grade de imagens da galeria -->
+        <div class="row g-4" id="lightgallery" data-aos="fade-up">
+            <!-- Item da galeria: Portaria -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="portaria">
+                <a href="img/galeria1.png" class="gallery-link">
+                    <div class="gallery-card">
+                        <img src="img/galeria1.png" alt="Portaria" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Portaria</span>
+                            <h4>Portaria Residencial</h4>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
 
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="limpeza">
-        <a href="img/galeria3.png" class="gallery-link">
-            <div class="gallery-card">
-                <img src="img/galeria3.png" alt="Limpeza" class="img-fluid">
-                <div class="gallery-overlay">
-                    <span class="gallery-category">Limpeza</span>
-                    <h4>Limpeza do Pilotis</h4>
-                    <i class="fas fa-search-plus"></i>
-                </div>
+            <!-- Item da galeria: Manutenção -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="manutencao">
+                <a href="img/galeria2.png" class="gallery-link">
+                    <div class="gallery-card">
+                        <img src="img/galeria2.png" alt="Manutenção" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Manutenção</span>
+                            <h4>Revitalização de Fachada</h4>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
 
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="jardinagem">
-        <a href="img/galeria4.png" class="gallery-link">
-            <div class="gallery-card">
-                <img src="img/galeria4.png" alt="Jardinagem" class="img-fluid">
-                <div class="gallery-overlay">
-                    <span class="gallery-category">Jardinagem</span>
-                    <h4>Gramado do Condomínio</h4>
-                    <i class="fas fa-search-plus"></i>
-                </div>
+            <!-- Item da galeria: Limpeza -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="limpeza">
+                <a href="img/galeria3.png" class="gallery-link">
+                    <div class="gallery-card">
+                        <img src="img/galeria3.png" alt="Limpeza" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Limpeza</span>
+                            <h4>Limpeza do Pilotis</h4>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
 
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="limpeza">
-        <a href="img/galeria5.png" class="gallery-link">
-            <div class="gallery-card">
-                <img src="img/galeria5.png" alt="Limpeza" class="img-fluid">
-                <div class="gallery-overlay">
-                    <span class="gallery-category">Limpeza</span>
-                    <h4>Limpeza da Garagem</h4>
-                    <i class="fas fa-search-plus"></i>
-                </div>
+            <!-- Item da galeria: Jardinagem -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="jardinagem">
+                <a href="img/galeria4.png" class="gallery-link">
+                    <div class="gallery-card">
+                        <img src="img/galeria4.png" alt="Jardinagem" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Jardinagem</span>
+                            <h4>Gramado do Condomínio</h4>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
 
-    <div class="col-lg-4 col-md-6 gallery-item" data-category="jardinagem">
-        <a href="img/galeria6.png" class="gallery-link">
-            <div class="gallery-card">
-                <img src="img/galeria6.png" alt="Jardinagem" class="img-fluid">
-                <div class="gallery-overlay">
-                    <span class="gallery-category">Jardinagem</span>
-                    <h4>Jardim da Embaixada</h4>
-                    <i class="fas fa-search-plus"></i>
-                </div>
+            <!-- Item da galeria: Limpeza -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="limpeza">
+                <a href="img/galeria5.png" class="gallery-link">
+                    <div class="gallery-card">
+                        <img src="img/galeria5.png" alt="Limpeza" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Limpeza</span>
+                            <h4>Limpeza da Garagem</h4>
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
-</div>
 
-    <!-- ============ DIFERENCIAIS ============ -->
-    <section id="diferenciais" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="section-badge">Por que nos escolher ?</span>
-                <h2 class="section-title"><span class="text-accent"> Nossos Diferenciais</span></h2>
-                <p class="section-subtitle">Eficiência máxima na gestão e preservação dos seus ativos.</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-graduation-cap"></i>
+            <!-- Item da galeria: Jardinagem -->
+            <div class="col-lg-4 col-md-6 gallery-item" data-category="jardinagem">
+                <a href="img/galeria6.png" class="gallery-link">
+                    <div class="gallery-card">
+                        <img src="img/galeria6.png" alt="Jardinagem" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Jardinagem</span>
+                            <h4>Jardim da Embaixada</h4>
+                            <i class="fas fa-search-plus"></i>
                         </div>
-                        <h3>Capital Humano de Elite</h3>
-                        <p>Seleção rigorosa com treinamento tático contínuo. Nossos especialistas são certificados em protocolos internacionais de segurança e eficiência operacional.</p>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3>Monitoramento Tático Ininterrupto</h3>
-                        <p>Disponibilidade absoluta. Nossa central de inteligência opera 24 horas por dia, 7 dias por semana, garantindo resposta imediata a qualquer intercorrência no seu patrimônio.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <h3>Gestão de Qualidade em Tempo Real</h3>
-                        <p>Auditoria operacional rigorosa. Utilizamos sistemas de geolocalização e relatórios digitais instantâneos para garantir que cada metro quadrado esteja sob supervisão técnica.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h3>Tecnologia de Última Geração</h3>
-                        <p>Inovação a serviço da sua estrutura. Operamos com o que há de mais moderno em maquinário industrial e softwares de gestão, maximizando a produtividade e reduzindo custos.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <h3>Engenharia de Soluções Sob Medida</h3>
-                        <p>Cada projeto é único. Desenhamos planos operacionais exclusivos que se moldam à complexidade e às necessidades específicas da sua organização ou condomínio.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-file-contract"></i>
-                        </div>
-                        <h3>Compliance e Governança</h3>
-                        <p>Contratos claros com prestação de contas digital. Garantimos total transparência administrativa e conformidade legal em todos os processos da nossa operação.</p>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-
-    <!-- ============ PROCESSO ============ -->
-    <section id="processo" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="section-badge">Como funciona ?</span>
-                <h2 class="section-title"><span class="text-accent">Protocolo de Implantação Specialized</span></h2>
-                <p class="section-subtitle">Integração técnica e operacional planejada para garantir máxima eficiência desde o primeiro dia.</p>
-            </div>
-            
-            <div class="process-timeline">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="process-step">
-                            <div class="step-number">01</div>
-                            <div class="step-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <h3><span class="text-accent">Consultoria Diagnóstica</span></h3>
-                            <p>Iniciamos com uma análise profunda da sua infraestrutura para identificar gargalos operacionais e oportunidades de otimização.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="process-step">
-                            <div class="step-number">02</div>
-                            <div class="step-icon">
-                                <i class="fas fa-clipboard-list"></i>
-                            </div>
-                            <h3><span class="text-accent">Planejamento Tático</span></h3>
-                            <p>Nossa engenharia de serviços desenha um cronograma personalizado, definindo escalas, produtos e protocolos específicos para sua unidade.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="process-step">
-                            <div class="step-number">03</div>
-                            <div class="step-icon">
-                                <i class="fas fa-file-signature"></i>
-                            </div>
-                            <h3><span class="text-accent">Proposta de Valor e Compliance</span></h3>
-                            <p>Apresentamos uma solução transparente e robusta, alinhada às normas técnicas e às necessidades financeiras do seu ativo.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="process-step">
-                            <div class="step-number">04</div>
-                            <div class="step-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <h3><span class="text-accent">Start Operacional de Elite</span></h3>
-                            <p>Ativação imediata das equipes treinadas, com supervisão técnica dedicada para garantir a excelência absoluta na entrega.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- ============ SEÇÃO DIFERENCIAIS ============ -->
+<section id="diferenciais" class="section-padding">
+    <div class="container">
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-badge">Por que nos escolher ?</span>
+            <h2 class="section-title">
+                <span class="text-accent">Nossos Diferenciais</span>
+            </h2>
+            <p class="section-subtitle">Eficiência máxima na gestão e preservação dos seus ativos.</p>
         </div>
-    </section>
-
-    <!-- ============ CARREIRAS ============ -->
-    <section id="carreiras" class="section-padding bg-dark">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <span class="section-badge">Trabalhe Conosco</span>
-                    <h2 class="section-title text-white">Construa sua Trajetória com a <span class="text-accent">Specialized</span></h2>
-                    <p class="text-light mb-4">
-                        Valorizamos profissionais comprometidos com a qualidade e o bom atendimento. Se você busca um ambiente de trabalho estável, organizado e que respeita sua dedicação, queremos te conhecer!
+        
+        <!-- Lista de diferenciais -->
+        <div class="row g-4">
+            <!-- Diferencial 1 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Capital Humano de Elite</h3>
+                    <p>
+                        Seleção rigorosa com treinamento tático contínuo. Nossos especialistas são
+                        certificados em protocolos internacionais de segurança e eficiência operacional.
                     </p>
-                    <div class="career-benefits">
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Remuneração Compatível com o Mercado</span>
+                </div>
+            </div>
+
+            <!-- Diferencial 2 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Monitoramento Tático Ininterrupto</h3>
+                    <p>
+                        Disponibilidade absoluta. Nossa central de inteligência opera 24 horas por dia,
+                        7 dias por semana, garantindo resposta imediata a qualquer intercorrência.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diferencial 3 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Gestão de Qualidade em Tempo Real</h3>
+                    <p>
+                        Auditoria operacional rigorosa com uso de geolocalização e relatórios digitais
+                        para supervisão técnica contínua.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diferencial 4 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Tecnologia de Última Geração</h3>
+                    <p>
+                        Utilização de maquinário industrial moderno e softwares de gestão para maximizar
+                        produtividade e reduzir custos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diferencial 5 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Engenharia de Soluções Sob Medida</h3>
+                    <p>
+                        Planos operacionais personalizados conforme a complexidade e necessidade de
+                        cada cliente ou condomínio.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Diferencial 6 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="diff-card">
+                    <div class="diff-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Compliance e Governança</h3>
+                    <p>
+                        Transparência administrativa, contratos claros e conformidade legal garantida
+                        em todos os processos operacionais.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SEÇÃO PROCESSO ============ -->
+<section id="processo" class="section-padding">
+    <div class="container">
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-badge">Como funciona ?</span>
+            <h2 class="section-title">
+                <span class="text-accent">Protocolo de Implantação Specialized</span>
+            </h2>
+            <p class="section-subtitle">
+                Integração técnica e operacional planejada para garantir máxima eficiência
+                desde o primeiro dia.
+            </p>
+        </div>
+        
+        <!-- Linha do tempo do processo -->
+        <div class="process-timeline">
+            <div class="row">
+                <!-- Etapa 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Pacote Completo de Benefícios</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Programas de Capacitação e Aperfeiçoamento</span>
-                        </div>
-                        <div class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Oportunidades Reais de Crescimento</span>
-                        </div>
+                        <h3><span class="text-accent">Consultoria Diagnóstica</span></h3>
+                        <p>
+                            Análise detalhada da infraestrutura para identificação de gargalos e
+                            oportunidades de otimização.
+                        </p>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="career-form-card">
-                        <h3>Cadastro de Talentos</h3>
-                        <form id="careerForm">
-                            <div class="mb-3">
-                                <label for="careerName" class="form-label">Nome Completo *</label>
-                                <input type="text" class="form-control" id="careerName" required>
+
+                <!-- Etapa 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3><span class="text-accent">Planejamento Tático</span></h3>
+                        <p>
+                            Definição de cronograma, escalas, produtos e protocolos específicos
+                            para a unidade atendida.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Etapa 3 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3><span class="text-accent">Proposta e Compliance</span></h3>
+                        <p>
+                            Apresentação de solução transparente, alinhada às normas técnicas
+                            e às necessidades financeiras do cliente.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Etapa 4 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <div class="step-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3><span class="text-accent">Início Operacional</span></h3>
+                        <p>
+                            Ativação imediata das equipes com supervisão técnica dedicada,
+                            garantindo excelência desde o primeiro dia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SEÇÃO CARREIRAS ============ -->
+<section id="carreiras" class="section-padding bg-dark">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Conteúdo institucional de carreiras -->
+            <div class="col-lg-6" data-aos="fade-right">
+                <span class="section-badge">Trabalhe Conosco</span>
+                <h2 class="section-title text-white">
+                    Construa sua Trajetória com a <span class="text-accent">Specialized</span>
+                </h2>
+                <p class="text-light mb-4">
+                    Valorizamos profissionais comprometidos com qualidade, organização e bom atendimento.
+                    Buscamos pessoas que desejam crescer junto com a empresa.
+                </p>
+
+                <!-- Benefícios -->
+                <div class="career-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Remuneração Compatível com o Mercado</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Pacote Completo de Benefícios</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Programas de Capacitação e Aperfeiçoamento</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Oportunidades Reais de Crescimento</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulário de cadastro de talentos -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="career-form-card">
+                    <h3>Cadastro de Talentos</h3>
+                    <form id="careerForm">
+                        <!-- Campo nome -->
+                        <div class="mb-3">
+                            <label for="careerName" class="form-label">Nome Completo *</label>
+                            <input type="text" class="form-control" id="careerName" required>
+                        </div>
+
+                        <!-- Campos telefone e e-mail -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="careerPhone" class="form-label">Telefone *</label>
+                                <input type="tel" class="form-control" id="careerPhone" required>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="careerPhone" class="form-label">Telefone *</label>
-                                    <input type="tel" class="form-control" id="careerPhone" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="careerEmail" class="form-label">E-mail *</label>
-                                    <input type="email" class="form-control" id="careerEmail" required>
-                                </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="careerEmail" class="form-label">E-mail *</label>
+                                <input type="email" class="form-control" id="careerEmail" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="careerArea" class="form-label">Cargo Desejado *</label>
-                                <select class="form-select" id="careerArea" required>
+                        </div>
+
+                        <!-- Campo cargo desejado -->
+                        <div class="mb-3">
+                            <label for="careerArea" class="form-label">Cargo Desejado *</label>
+                            <select class="form-select" id="careerArea" required>
+                                <option value="">Selecione...</option>
+                                <option value="Portaria">Portaria</option>
+                                <option value="Limpeza">Limpeza</option>
+                                <option value="Jardinagem">Jardinagem</option>
+                                <option value="Manutencao">Manutenção</option>
+                                <option value="Administrativo">Administrativo</option>
+                            </select>
+                        </div>
+
+                        <!-- Campo experiência profissional -->
+                        <div class="mb-3">
+                            <label for="careerExperience" class="form-label">Experiência Profissional *</label>
+                            <textarea class="form-control" id="careerExperience" rows="3"
+                                placeholder="Resuma suas principais experiências e qualificações..."></textarea>
+                        </div>
+
+                        <!-- Botão de envio -->
+                        <button type="submit" class="btn btn-primary-custom w-100">
+                            <i class="fab fa-whatsapp"></i>
+                            Enviar Candidatura via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section id="contato" class="section-padding">
+    <div class="container">
+        <!-- Cabeçalho da seção de contato -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-badge">Nosso Contato</span>
+            <h2 class="section-title"><span class="text-accent">Entre em Contato</span></h2>
+            <p class="section-subtitle">
+                Nossa equipe está à disposição para entender sua necessidade e desenhar a melhor solução!
+            </p>
+        </div>
+        
+        <!-- Informações de contato -->
+        <div class="row g-4">
+            <!-- Área de atuação -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Área de Atuação</h3>
+                    <p>
+                        Brasília – Distrito Federal. Operação estratégica em todo o DF e Entorno, com logística ágil para atendimento local.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Telefones de contato -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Telefones de Contato</h3>
+                    <p>
+                        <a href="https://wa.me/5561981999789">(61) 9 8199-9789 - Adalberto</a>
+                        <a href="https://wa.me/5561993566227">(61) 9 9356-6227 - Gilson</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Endereço de e-mail -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Nosso E-mail</h3>
+                    <p>
+                        <a href="mailto:specializedservicos@gmail.com">specializedservicos@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Formulário de contato -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                <div class="contact-form-card">
+                    <h3>Solicite uma Proposta Técnica</h3>
+
+                    <form id="contactForm">
+                        <!-- Dados pessoais -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="contactName" class="form-label">Nome Completo *</label>
+                                <input type="text" class="form-control" id="contactName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="contactPhone" class="form-label">Telefone *</label>
+                                <input type="tel" class="form-control" id="contactPhone" required>
+                            </div>
+                        </div>
+
+                        <!-- Informações do serviço -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="contactEmail" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="contactEmail">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="contactService" class="form-label">Serviço Desejado *</label>
+                                <select class="form-select" id="contactService" required>
                                     <option value="">Selecione...</option>
                                     <option value="Portaria">Portaria</option>
                                     <option value="Limpeza">Limpeza</option>
                                     <option value="Jardinagem">Jardinagem</option>
-                                    <option value="Manutencao">Manutenção</option>
-                                    <option value="Administrativo">Administrativo</option>
+                                    <option value="Manutencao">Manutenção Geral</option>
+                                    <option value="Outros">Outros/Todos</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
-                                <label for="careerExperience" class="form-label">Experiência Profissional *</label>
-                                <textarea class="form-control" id="careerExperience" rows="3" placeholder="Resuma suas principais experiências e qualificações..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary-custom w-100">
-                                <i class="fab fa-whatsapp"></i>
-                                Enviar Candidatura via WhatsApp
-                            </button>
-                        </form>
-                    </div>
+                        </div>
+
+                        <!-- Mensagem -->
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Descreva sua necessidade *</label>
+                            <textarea
+                                class="form-control"
+                                id="contactMessage"
+                                rows="4"
+                                required
+                                placeholder="Conte-nos mais sobre as necessidades do seu patrimônio...">
+                            </textarea>
+                        </div>
+
+                        <!-- Botão de envio -->
+                        <button type="submit" class="btn btn-primary-custom w-100">
+                            <i class="fab fa-whatsapp"></i>
+                            Receber Proposta via WhatsApp
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============ CONTATO ============ -->
-    <section id="contato" class="section-padding">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="section-badge">Nosso Contato</span>
-                <h2 class="section-title"><span class="text-accent">Entre em Contato</span></h2>
-                <p class="section-subtitle">Nossa equipe está à disposição para entender sua necessidade e desenhar a melhor solução!</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Área de Atuação</h3>
-                        <p>Brasília – Distrito Federal. Operação estratégica em todo o DF e Entorno, com logística ágil para atendimento local.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <h3>Telefones de Contato</h3>
-                        <p>
-                            <a href="https://wa.me/5561981999789">(61) 9 8199-9789 - Adalberto</a>
-                            <a href="https://wa.me/5561993566227">(61) 9 9356-6227 - Gilson</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="contact-info-card">
-                        <div class="contact-info-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Nosso E-mail</h3>
-                        <p>
-                            <a href="mailto:specializedservicos@gmail.com">specializedservicos@gmail.com</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                    <div class="contact-form-card">
-                        <h3>Solicite uma Proposta Técnica</h3>
-                        <form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="contactName" class="form-label">Nome Completo *</label>
-                                    <input type="text" class="form-control" id="contactName" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="contactPhone" class="form-label">Telefone *</label>
-                                    <input type="tel" class="form-control" id="contactPhone" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="contactEmail" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control" id="contactEmail">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="contactService" class="form-label">Serviço Desejado *</label>
-                                    <select class="form-select" id="contactService" required>
-                                        <option value="">Selecione...</option>
-                                        <option value="Portaria">Portaria</option>
-                                        <option value="Limpeza">Limpeza</option>
-                                        <option value="Jardinagem">Jardinagem</option>
-                                        <option value="Manutencao">Manutenção Geral</option>
-                                        <option value="Outros">Outros/Todos</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="contactMessage" class="form-label">Descreva sua necessidade *</label>
-                                <textarea class="form-control" id="contactMessage" rows="4" required placeholder="Conte-nos mais sobre as necessidades do seu patrimônio..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary-custom w-100">
-                                <i class="fab fa-whatsapp"></i>
-                                Receber Proposta via WhatsApp
-                            </button>
-                        </form>
-                    </div>
-                </div>
+<!-- ============ CHAMADA FINAL PARA AÇÃO ============ -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+            <h2>Sua tranquilidade começa com uma gestão de excelência!</h2>
+            <p>Entre em contato agora mesmo e solicite seu orçamento sem compromisso.</p>
+
+            <div class="cta-buttons">
+                <a
+                    href="https://wa.me/5561981999789?text=Olá! Gostaria de solicitar um orçamento."
+                    class="btn btn-cta-primary"
+                    target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    Solicitar Orçamento
+                </a>
+
+                <a href="tel:+5561981999789" class="btn btn-cta-secondary">
+                    <i class="fas fa-phone-alt"></i>
+                    Ligar Agora
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ============ CTA FINAL ============ -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content" data-aos="fade-up">
-                <h2>Sua tranquilidade começa com uma gestão de excelência!</h2>
-                <p>Entre em contato agora mesmo e solicite seu orçamento sem compromisso.</p>
-                <div class="cta-buttons">
-                    <a href="https://wa.me/5561981999789?text=Olá! Gostaria de solicitar um orçamento." class="btn btn-cta-primary" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        Solicitar Orçamento
-                    </a>
-                    <a href="tel:+5561981999789" class="btn btn-cta-secondary">
+<!-- ============ RODAPÉ ============ -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Marca e descrição -->
+            <div class="col-lg-4">
+                <div class="footer-brand">
+                    <span class="brand-name">SPECIALIZED</span>
+                    <span class="brand-sub">SERVICOS</span>
+                </div>
+                <p class="footer-about">
+                    Especialista em soluções de terceirização, a Specialized Serviços entrega excelência e compromisso
+                    em todo o Distrito Federal, focando na valorização e segurança do seu patrimônio.
+                </p>
+
+                <!-- Redes sociais -->
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/5561981999789" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Links rápidos -->
+            <div class="col-lg-2 col-md-6">
+                <h4 class="footer-title">Links Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Lista de serviços -->
+            <div class="col-lg-3 col-md-6">
+                <h4 class="footer-title">Serviços</h4>
+                <ul class="footer-links">
+                    <li><a href="#servicos">Portaria</a></li>
+                    <li><a href="#servicos">Limpeza</a></li>
+                    <li><a href="#servicos">Jardinagem</a></li>
+                    <li><a href="#servicos">Manutenções Gerais</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="col-lg-3">
+                <h4 class="footer-title">Contato</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Brasília - DF</span>
+                    </li>
+                    <li>
                         <i class="fas fa-phone-alt"></i>
-                        Ligar Agora
-                    </a>
-                </div>
+                        <span>(61) 9 8199-9789</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>specializedservicos@gmail.com</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- ============ FOOTER ============ -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="footer-brand">
-                        <span class="brand-name">SPECIALIZED</span>
-                        <span class="brand-sub">SERVICOS</span>
-                    </div>
-                    <p class="footer-about">
-                        Especialista em soluções de terceirização, a Specialized Serviços entrega excelência e compromisso em todo o Distrito Federal, focando na valorização e segurança do seu patrimônio.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://wa.me/5561981999789" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="footer-title">Links Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#galeria">Galeria</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="footer-title">Serviços</h4>
-                    <ul class="footer-links">
-                        <li><a href="#servicos">Portaria</a></li>
-                        <li><a href="#servicos">Limpeza</a></li>
-                        <li><a href="#servicos">Jardinagem</a></li>
-                        <li><a href="#servicos">Manutenções Gerais</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h4 class="footer-title">Contato</h4>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Brasilia - DF</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <span>(61) 9 8199-9789</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>specializedservicos@gmail.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Specialized Serviços. Todos os direitos reservados.</p>
-            </div>
+        <!-- Direitos autorais -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Specialized Serviços. Todos os direitos reservados.</p>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- ============ WHATSAPP FLOAT ============ -->
-    <a href="https://wa.me/5561981999789?text=Olá! Gostaria de mais informações." class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-        <span class="pulse"></span>
-    </a>
+<!-- ============ BOTÃO FLUTUANTE DO WHATSAPP ============ -->
+<a
+    href="https://wa.me/5561981999789?text=Olá! Gostaria de mais informações."
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="pulse"></span>
+</a>
 
-    <!-- ============ BACK TO TOP ============ -->
-    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+<!-- ============ BOTÃO VOLTAR AO TOPO ============ -->
+<button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+</button>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- AOS Animation -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- LightGallery -->
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-</body>
-</html>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Biblioteca de animações AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- LightGallery (galeria de imagens) -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.min.js"></script>
+
+<!-- Script personalizado -->
+<script src="script.js"></script>
