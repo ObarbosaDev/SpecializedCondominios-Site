@@ -1,10 +1,10 @@
 /* ============================================
-   SPECIALIZED SERVICOS - MAIN JAVASCRIPT
-   Vanilla JS ES6+
+   SPECIALIZED SERVICOS - JAVASCRIPT PRINCIPAL
+   JavaScript puro ES6+
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all modules
+    // Inicializa todos os módulos do site
     initPreloader();
     initNavbar();
     initSmoothScroll();
@@ -26,7 +26,7 @@ function initPreloader() {
     
     const preloaderStats = preloader.querySelectorAll('.stat-number');
     
-    // Animate preloader counters
+    // Anima os contadores do preloader
     preloaderStats.forEach(stat => {
         const target = parseInt(stat.getAttribute('data-target'));
         if (target) {
@@ -34,7 +34,7 @@ function initPreloader() {
         }
     });
     
-    // Hide preloader after animation
+    // Oculta o preloader após a animação
     window.addEventListener('load', function() {
         setTimeout(() => {
             preloader.classList.add('hidden');
@@ -42,7 +42,7 @@ function initPreloader() {
         }, 2500);
     });
     
-    // Fallback - hide after 4 seconds max
+    // Fallback - oculta o preloader após no máximo 4 segundos
     setTimeout(() => {
         preloader.classList.add('hidden');
         document.body.classList.remove('loading');
@@ -57,7 +57,7 @@ function initNavbar() {
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const sections = document.querySelectorAll('section[id]');
     
-    // Scroll effect
+    // Efeito ao rolar a página
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -65,7 +65,7 @@ function initNavbar() {
             navbar.classList.remove('scrolled');
         }
         
-        // Update active nav link based on scroll position
+        // Atualiza o link ativo com base na posição do scroll
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
@@ -83,7 +83,7 @@ function initNavbar() {
         });
     });
     
-    // Close mobile menu on link click
+    // Fecha o menu mobile ao clicar em um link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -97,7 +97,7 @@ function initNavbar() {
     });
 }
 
-/* ============ SMOOTH SCROLL ============ */
+/* ============ ROLAGEM SUAVE ============ */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -116,7 +116,7 @@ function initSmoothScroll() {
     });
 }
 
-/* ============ COUNTER ANIMATION ============ */
+/* ============ ANIMAÇÃO DE CONTADORES ============ */
 function initCounters() {
     const counters = document.querySelectorAll('.hero-stats .counter');
     
@@ -153,16 +153,16 @@ function animateCounter(element, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-/* ============ GALLERY FILTER ============ */
+/* ============ FILTRO DA GALERIA ============ */
 function initGalleryFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
-            // Remove active class from all buttons
+            // Remove a classe ativa de todos os botões
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
+            // Adiciona a classe ativa ao botão clicado
             this.classList.add('active');
             
             const filter = this.getAttribute('data-filter');
@@ -194,7 +194,7 @@ function initLightGallery() {
     }
 }
 
-/* ============ TESTIMONIAL SLIDER ============ */
+/* ============ SLIDER DE DEPOIMENTOS ============ */
 function initTestimonialSlider() {
     const track = document.querySelector('.testimonial-track');
     const cards = document.querySelectorAll('.testimonial-card');
@@ -207,7 +207,7 @@ function initTestimonialSlider() {
     let currentIndex = 0;
     const totalSlides = cards.length;
     
-    // Create dots
+    // Cria os indicadores (bolinhas)
     for (let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('span');
         dot.classList.add('dot');
@@ -241,20 +241,20 @@ function initTestimonialSlider() {
         updateSlider();
     }
     
-    // Event listeners
+    // Eventos dos botões
     if (prevBtn) prevBtn.addEventListener('click', prevSlide);
     if (nextBtn) nextBtn.addEventListener('click', nextSlide);
     
-    // Auto-play
+    // Reprodução automática
     let autoPlay = setInterval(nextSlide, 5000);
     
-    // Pause on hover
+    // Pausa ao passar o mouse
     track.addEventListener('mouseenter', () => clearInterval(autoPlay));
     track.addEventListener('mouseleave', () => {
         autoPlay = setInterval(nextSlide, 5000);
     });
     
-    // Touch support
+    // Suporte a toque (swipe)
     let touchStartX = 0;
     let touchEndX = 0;
     
@@ -279,9 +279,9 @@ function initTestimonialSlider() {
     }
 }
 
-/* ============ FORMS - WHATSAPP INTEGRATION ============ */
+/* ============ FORMULÁRIOS - INTEGRAÇÃO COM WHATSAPP ============ */
 function initForms() {
-    // Career Form
+    // Formulário Trabalhe Conosco
     const careerForm = document.getElementById('careerForm');
     if (careerForm) {
         careerForm.addEventListener('submit', function(e) {
@@ -303,20 +303,20 @@ function initForms() {
                 `*Experiencia:* ${experience || 'Nao informada'}%0A%0A` +
                 `_Enviado pelo site Specialized Servicos_`;
             
-            // Select WhatsApp number based on area
-            let whatsappNumber = '5561982449781'; // default
+            // Seleciona o número do WhatsApp de acordo com a área
+            let whatsappNumber = '5561982449781'; // padrão
             if (area === 'Portaria') whatsappNumber = '5561981999789';
             if (area === 'Jardinagem') whatsappNumber = '5561993566227';
             
             window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
             
-            // Show success and reset form
+            // Exibe mensagem de sucesso e limpa o formulário
             showFormSuccess(this);
             this.reset();
         });
     }
     
-    // Contact Form
+    // Formulário de Contato
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -338,14 +338,14 @@ function initForms() {
                 `*Mensagem:* ${messageText}%0A%0A` +
                 `_Enviado pelo site Specialized Servicos_`;
             
-            // Select WhatsApp number based on service
-            let whatsappNumber = '5561982449781'; // default
+            // Seleciona o número do WhatsApp de acordo com o serviço
+            let whatsappNumber = '5561982449781'; // padrão
             if (service === 'Portaria') whatsappNumber = '5561981999789';
             if (service === 'Jardinagem') whatsappNumber = '5561993566227';
             
             window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
             
-            // Show success and reset form
+            // Exibe mensagem de sucesso e limpa o formulário
             showFormSuccess(this);
             this.reset();
         });
@@ -366,7 +366,7 @@ function validateForm(form) {
         }
     });
     
-    // Email validation
+    // Validação de e-mail
     const emailField = form.querySelector('input[type="email"]');
     if (emailField && emailField.value) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -380,7 +380,7 @@ function validateForm(form) {
 }
 
 function showFormSuccess(form) {
-    // Create success message
+    // Cria a mensagem de sucesso
     let successDiv = form.querySelector('.form-success');
     if (!successDiv) {
         successDiv = document.createElement('div');
@@ -396,7 +396,7 @@ function showFormSuccess(form) {
     }, 3000);
 }
 
-/* ============ PHONE MASK ============ */
+/* ============ MÁSCARA DE TELEFONE ============ */
 function initPhoneMask() {
     const phoneInputs = document.querySelectorAll('input[type="tel"]');
     
@@ -423,7 +423,7 @@ function initPhoneMask() {
     });
 }
 
-/* ============ BACK TO TOP ============ */
+/* ============ VOLTAR AO TOPO ============ */
 function initBackToTop() {
     const backToTop = document.getElementById('backToTop');
     if (!backToTop) return;
@@ -444,7 +444,7 @@ function initBackToTop() {
     });
 }
 
-/* ============ AOS ANIMATION ============ */
+/* ============ ANIMAÇÕES AOS ============ */
 function initAOS() {
     if (typeof window.AOS !== 'undefined') {
         window.AOS.init({
@@ -457,7 +457,7 @@ function initAOS() {
     }
 }
 
-/* ============ SCROLL PROGRESS INDICATOR ============ */
+/* ============ INDICADOR DE PROGRESSO DE SCROLL ============ */
 function initScrollProgress() {
     const progressBar = document.createElement('div');
     progressBar.style.cssText = `
@@ -480,7 +480,7 @@ function initScrollProgress() {
     });
 }
 
-/* ============ LOCAL STORAGE FOR FORMS ============ */
+/* ============ LOCAL STORAGE PARA FORMULÁRIOS ============ */
 function saveFormData(formId) {
     const form = document.getElementById(formId);
     if (!form) return;
@@ -514,19 +514,19 @@ function loadFormData(formId) {
     }
 }
 
-// Auto-save forms every 30 seconds
+// Salvamento automático dos formulários a cada 30 segundos
 setInterval(() => {
     saveFormData('careerForm');
     saveFormData('contactForm');
 }, 30000);
 
-// Load saved data on page load
+// Carrega os dados salvos ao carregar a página
 window.addEventListener('load', () => {
     loadFormData('careerForm');
     loadFormData('contactForm');
 });
 
-/* ============ RIPPLE EFFECT FOR BUTTONS ============ */
+/* ============ EFEITO RIPPLE NOS BOTÕES ============ */
 document.querySelectorAll('.btn-primary-custom, .btn-service, .btn-cta-primary, .btn-orcamento').forEach(button => {
     button.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
@@ -556,7 +556,7 @@ document.querySelectorAll('.btn-primary-custom, .btn-service, .btn-cta-primary, 
     });
 });
 
-// Add ripple animation style
+// Adiciona o estilo da animação ripple
 const style = document.createElement('style');
 style.textContent = `
     @keyframes ripple {
@@ -568,7 +568,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-/* ============ LAZY LOADING IMAGES ============ */
+/* ============ CARREGAMENTO LAZY DE IMAGENS ============ */
 if ('IntersectionObserver' in window) {
     const lazyImages = document.querySelectorAll('img[data-src]');
     
@@ -586,9 +586,9 @@ if ('IntersectionObserver' in window) {
     lazyImages.forEach(img => imageObserver.observe(img));
 }
 
-/* ============ KEYBOARD NAVIGATION ============ */
+/* ============ NAVEGAÇÃO POR TECLADO ============ */
 document.addEventListener('keydown', function(e) {
-    // ESC to close mobile menu
+    // Tecla ESC para fechar o menu mobile
     if (e.key === 'Escape') {
         const navbarCollapse = document.querySelector('.navbar-collapse.show');
         if (navbarCollapse) {
@@ -598,6 +598,6 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-/* ============ CONSOLE MESSAGE ============ */
+/* ============ MENSAGEM NO CONSOLE ============ */
 console.log('%c SPECIALIZED SERVICOS ', 'background: #c9a227; color: #0a0a0a; font-size: 24px; font-weight: bold; padding: 10px 20px;');
 console.log('%c Site desenvolvido com excelencia! ', 'color: #c9a227; font-size: 14px;');
