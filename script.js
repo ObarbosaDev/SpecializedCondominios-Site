@@ -300,13 +300,13 @@ function initForms() {
                 `*Telefone:* ${phone}%0A` +
                 `*E-mail:* ${email}%0A` +
                 `*Area de Interesse:* ${area}%0A` +
-                `*Experiencia:* ${experience || 'Nao informada'}%0A%0A` +
-                `_Enviado pelo site Specialized Servicos_`;
+                `*Experiência:* ${experience || 'Não informada'}%0A%0A` +
+                `_Enviado pelo site Specialized Serviços_`;
             
             // Seleciona o número do WhatsApp de acordo com a área
-            let whatsappNumber = '5561982449781'; // padrão
+            let whatsappNumber = '5561981999789'; // padrão
             if (area === 'Portaria') whatsappNumber = '5561981999789';
-            if (area === 'Jardinagem') whatsappNumber = '5561993566227';
+            if (area === 'Jardinagem') whatsappNumber = '5561981999789';
             
             window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
             
@@ -330,18 +330,18 @@ function initForms() {
             const service = document.getElementById('contactService').value;
             const messageText = document.getElementById('contactMessage').value;
             
-            const message = `*CONTATO - SOLICITACAO DE ORCAMENTO*%0A%0A` +
+            const message = `*CONTATO - SOLICITAÇÃO DE ORÇAMENTO*%0A%0A` +
                 `*Nome:* ${name}%0A` +
                 `*Telefone:* ${phone}%0A` +
-                `*E-mail:* ${email || 'Nao informado'}%0A` +
-                `*Servico:* ${service}%0A` +
+                `*E-mail:* ${email || 'Não informado'}%0A` +
+                `*Serviço:* ${service}%0A` +
                 `*Mensagem:* ${messageText}%0A%0A` +
-                `_Enviado pelo site Specialized Servicos_`;
+                `_Enviado pelo site Specialized Serviços_`;
             
             // Seleciona o número do WhatsApp de acordo com o serviço
-            let whatsappNumber = '5561982449781'; // padrão
+            let whatsappNumber = '5561981999789'; // padrão
             if (service === 'Portaria') whatsappNumber = '5561981999789';
-            if (service === 'Jardinagem') whatsappNumber = '5561993566227';
+            if (service === 'Jardinagem') whatsappNumber = '5561981999789';
             
             window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
             
