@@ -527,7 +527,7 @@ window.addEventListener('load', () => {
 });
 
 /* ============ EFEITO RIPPLE NOS BOTÕES ============ */
-document.querySelectorAll('.btn-primary-custom, .btn-service, .btn-cta-primary, .btn-orcamento').forEach(button => {
+document.querySelectorAll('.btn-primary-custom, .btn-service, .btn-cta-primary, .btn-orçamento').forEach(button => {
     button.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
