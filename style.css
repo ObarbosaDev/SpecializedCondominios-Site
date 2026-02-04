@@ -1,10 +1,10 @@
 /* ============================================
-   SPECIALIZED SERVICOS - PREMIUM STYLESHEET
+   SPECIALIZED SERVICOS - FOLHA DE ESTILOS PREMIUM
    Cores: Preto, Bege e Dourado
    Fontes: Playfair Display + DM Sans
    ============================================ */
 
-/* ============ CSS VARIABLES ============ */
+/* ============ VARIÁVEIS CSS ============ */
 :root {
     /* Cores Principais - Preto, Bege e Dourado */
     --black: #0a0a0a;
@@ -19,7 +19,7 @@
     --cream: #fffdf8;
     --white: #ffffff;
     
-    /* Grays */
+    /* Tons de Cinza */
     --gray-100: #f8f8f8;
     --gray-200: #e8e8e8;
     --gray-300: #d0d0d0;
@@ -29,16 +29,16 @@
     --gray-700: #404040;
     --gray-800: #303030;
     
-    /* Status */
+    /* Estados */
     --success: #2d6a4f;
     --danger: #9b2c2c;
     
-    /* Typography */
+    /* Tipografia */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'DM Sans', sans-serif;
     --font-accent: 'Cormorant Garamond', serif;
     
-    /* Spacing */
+    /* Espaçamentos */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
@@ -47,27 +47,27 @@
     --spacing-2xl: 4rem;
     --spacing-3xl: 6rem;
     
-    /* Border Radius */
+    /* Raio de Borda */
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 16px;
     --radius-xl: 24px;
     --radius-full: 50%;
     
-    /* Shadows */
+    /* Sombras */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 16px 60px rgba(0, 0, 0, 0.16);
     --shadow-gold: 0 0 40px rgba(201, 162, 39, 0.3);
     
-    /* Transitions */
+    /* Transições */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
 }
 
-/* ============ RESET & BASE ============ */
+/* ============ RESET E BASE ============ */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -371,7 +371,7 @@ ul {
     box-shadow: var(--shadow-gold);
 }
 
-/* Navbar Toggler */
+/* Botão do menu mobile */
 .navbar-toggler {
     border: none;
     padding: 10px;
@@ -409,7 +409,7 @@ ul {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Mobile Menu */
+/* Menu Mobile */
 @media (max-width: 991.98px) {
     .navbar-collapse {
         background: var(--black);
@@ -434,7 +434,7 @@ ul {
     }
 }
 
-/* ============ HERO SECTION ============ */
+/* ============ SEÇÃO HERO ============ */
 .hero-section {
     position: relative;
     min-height: 100vh;
@@ -593,7 +593,7 @@ ul {
     transform: translateX(5px);
 }
 
-/* Hero Stats */
+/* Estatísticas do Hero */
 .hero-stats {
     display: flex;
     gap: var(--spacing-md);
@@ -642,7 +642,7 @@ ul {
     letter-spacing: 0.5px;
 }
 
-/* Hero Contact Card */
+/* Cartão de Contato do Hero */
 .hero-contact-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -651,6 +651,7 @@ ul {
     backdrop-filter: blur(20px);
 }
 
+/* Cabeçalho do cartão de contato */
 .contact-card-header {
     background: var(--gold);
     padding: 24px;
@@ -659,11 +660,13 @@ ul {
     gap: 14px;
 }
 
+/* Ícone do cabeçalho */
 .contact-card-header i {
     font-size: 1.6rem;
     color: var(--black);
 }
 
+/* Título do cabeçalho */
 .contact-card-header h3 {
     font-size: 1.2rem;
     font-weight: 600;
@@ -671,10 +674,12 @@ ul {
     margin: 0;
 }
 
+/* Corpo do cartão de contato */
 .contact-card-body {
     padding: 24px;
 }
 
+/* Item individual de contato */
 .contact-item {
     display: flex;
     align-items: center;
@@ -686,11 +691,13 @@ ul {
     transition: var(--transition-normal);
 }
 
+/* Efeito hover no item de contato */
 .contact-item:hover {
     background: rgba(255, 255, 255, 0.05);
     transform: translateX(5px);
 }
 
+/* Ícone do contato */
 .contact-icon {
     width: 50px;
     height: 50px;
@@ -702,21 +709,25 @@ ul {
     flex-shrink: 0;
 }
 
+/* Estilo do ícone para WhatsApp */
 .contact-item.whatsapp .contact-icon {
     background: rgba(37, 211, 102, 0.15);
     color: #25d366;
 }
 
+/* Estilo do ícone para E-mail */
 .contact-item.email .contact-icon {
     background: rgba(201, 162, 39, 0.15);
     color: var(--gold);
 }
 
+/* Informações do contato */
 .contact-info {
     display: flex;
     flex-direction: column;
 }
 
+/* Rótulo do contato */
 .contact-label {
     font-size: 0.75rem;
     color: var(--gray-500);
@@ -725,17 +736,20 @@ ul {
     font-weight: 500;
 }
 
+/* Valor do contato */
 .contact-value {
     font-size: 1rem;
     color: var(--cream);
     font-weight: 500;
 }
 
+/* Rodapé do cartão de contato */
 .contact-card-footer {
     padding: 16px 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Selo de atendimento 24 horas */
 .badge-24h {
     display: flex;
     align-items: center;
@@ -751,7 +765,7 @@ ul {
 }
 
 
-/* ============ SECTION BADGES & TITLES ============ */
+/* ============ SELOS E TÍTULOS DAS SEÇÕES ============ */
 .section-badge {
     display: inline-block;
     background: rgba(201, 162, 39, 0.1);
@@ -766,6 +780,7 @@ ul {
     margin-bottom: var(--spacing-md);
 }
 
+/* Título principal da seção */
 .section-title {
     font-size: 3rem;
     font-weight: 700;
@@ -773,6 +788,7 @@ ul {
     letter-spacing: -0.5px;
 }
 
+/* Subtítulo da seção */
 .section-subtitle {
     font-size: 1.1rem;
     color: var(--gray-600);
@@ -781,17 +797,19 @@ ul {
     line-height: 1.8;
 }
 
-/* ============ ABOUT SECTION ============ */
+/* ============ SEÇÃO SOBRE ============ */
 .about-images {
     position: relative;
     padding: 50px;
 }
 
+/* Imagem principal da seção sobre */
 .about-img-main img {
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
 }
 
+/* Imagem secundária da seção sobre */
 .about-img-secondary {
     position: absolute;
     bottom: 0;
@@ -802,10 +820,12 @@ ul {
     box-shadow: var(--shadow-lg);
 }
 
+/* Estilo da imagem secundária */
 .about-img-secondary img {
     border-radius: var(--radius-md);
 }
 
+/* Selo informativo da seção sobre */
 .about-badge {
     position: absolute;
     top: 0;
@@ -817,6 +837,7 @@ ul {
     box-shadow: var(--shadow-lg);
 }
 
+/* Número do selo */
 .about-badge .badge-number {
     display: block;
     font-family: var(--font-heading);
@@ -826,6 +847,7 @@ ul {
     line-height: 1;
 }
 
+/* Texto do selo */
 .about-badge .badge-text {
     font-size: 0.75rem;
     color: var(--black);
@@ -834,10 +856,12 @@ ul {
     letter-spacing: 1px;
 }
 
+/* Conteúdo textual da seção sobre */
 .about-content {
     padding-left: 40px;
 }
 
+/* Texto descritivo da seção sobre */
 .about-text {
     color: var(--gray-600);
     margin-bottom: var(--spacing-md);
@@ -845,6 +869,7 @@ ul {
     line-height: 1.8;
 }
 
+/* Lista de diferenciais */
 .about-features {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -852,6 +877,7 @@ ul {
     margin-top: var(--spacing-lg);
 }
 
+/* Item individual de diferencial */
 .feature-item {
     display: flex;
     align-items: center;
@@ -860,12 +886,13 @@ ul {
     font-weight: 500;
 }
 
+/* Ícone do diferencial */
 .feature-item i {
     color: var(--gold);
     font-size: 1.2rem;
 }
 
-/* MVV Cards */
+/* Cartões de Missão, Visão e Valores */
 .mvv-card {
     background: var(--cream);
     padding: 50px 35px;
@@ -877,12 +904,14 @@ ul {
     border: 1px solid transparent;
 }
 
+/* Efeito ao passar o mouse no cartão MVV */
 .mvv-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-xl);
     border-color: rgba(201, 162, 39, 0.3);
 }
 
+/* Ícone do cartão MVV */
 .mvv-icon {
     width: 90px;
     height: 90px;
@@ -894,32 +923,37 @@ ul {
     margin: 0 auto var(--spacing-lg);
 }
 
+/* Ícone interno do cartão MVV */
 .mvv-icon i {
     font-size: 2.2rem;
     color: var(--gold);
 }
 
+/* Título do cartão MVV */
 .mvv-card h3 {
     font-size: 1.4rem;
     margin-bottom: var(--spacing-sm);
 }
 
+/* Texto do cartão MVV */
 .mvv-card p {
     color: var(--gray-600);
     font-size: 1rem;
     line-height: 1.7;
 }
 
-/* ============ SERVICES SECTION ============ */
+/* ============ SEÇÃO DE SERVIÇOS ============ */
 #servicos {
     background: linear-gradient(180deg, var(--cream) 0%, var(--beige) 100%);
 }
 
+/* Cartão de serviço com efeito 3D */
 .service-card {
     height: 400px;
     perspective: 1000px;
 }
 
+/* Conteúdo interno do cartão de serviço */
 .service-card-inner {
     position: relative;
     width: 100%;
@@ -928,10 +962,12 @@ ul {
     transform-style: preserve-3d;
 }
 
+/* Animação de rotação ao passar o mouse */
 .service-card:hover .service-card-inner {
     transform: rotateY(180deg);
 }
 
+/* Frente e verso do cartão de serviço */
 .service-front,
 .service-back {
     position: absolute;
@@ -942,6 +978,7 @@ ul {
     padding: 45px 35px;
 }
 
+/* Frente do cartão de serviço */
 .service-front {
     background: var(--cream);
     display: flex;
@@ -953,6 +990,7 @@ ul {
     border: 1px solid var(--beige-dark);
 }
 
+/* Ícone do serviço */
 .service-icon {
     width: 110px;
     height: 110px;
@@ -964,22 +1002,26 @@ ul {
     margin-bottom: var(--spacing-lg);
 }
 
+/* Ícone interno do serviço */
 .service-icon i {
     font-size: 2.8rem;
     color: var(--gold);
 }
 
+/* Título do serviço (frente) */
 .service-front h3 {
     font-size: 1.5rem;
     margin-bottom: var(--spacing-sm);
 }
 
+/* Descrição do serviço (frente) */
 .service-front p {
     color: var(--gray-600);
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
+/* Verso do cartão de serviço */
 .service-back {
     background: var(--black);
     transform: rotateY(180deg);
@@ -988,6 +1030,7 @@ ul {
     justify-content: center;
 }
 
+/* Título do verso do cartão de serviço */
 .service-back h4 {
     color: var(--gold);
     font-size: 1.1rem;
@@ -996,10 +1039,12 @@ ul {
     letter-spacing: 2px;
 }
 
+/* Lista de itens do serviço */
 .service-back ul {
     margin-bottom: var(--spacing-lg);
 }
 
+/* Item individual da lista de serviços */
 .service-back ul li {
     color: var(--gray-300);
     font-size: 0.95rem;
@@ -1009,11 +1054,13 @@ ul {
     gap: 12px;
 }
 
+/* Ícone do item da lista */
 .service-back ul li i {
     color: var(--gold);
     font-size: 0.85rem;
 }
 
+/* Botão do serviço */
 .btn-service {
     background: var(--gold);
     color: var(--black);
@@ -1026,13 +1073,14 @@ ul {
     display: block;
 }
 
+/* Efeito hover do botão do serviço */
 .btn-service:hover {
     background: var(--gold-light);
     color: var(--black);
     transform: translateY(-2px);
 }
 
-/* ============ GALLERY SECTION ============ */
+/* ============ SEÇÃO DA GALERIA ============ */
 .gallery-filters {
     display: flex;
     justify-content: center;
@@ -1126,8 +1174,8 @@ ul {
     font-size: 1.5rem;
 }
 
-/* ============ DIFERENCIAIS SECTION ============ */
-.differentials-section { /* Seletor da seção pai para controlar o espaçamento externo */
+/* ============ SEÇÃO DE DIFERENCIAIS ============ */
+.differentials-section { /* Seletor da seção principal para controle do espaçamento externo */
     margin-bottom: -50px; /* Ajuste este valor para diminuir o espaço */
     padding-bottom: 0;
 }
@@ -1176,7 +1224,7 @@ ul {
     line-height: 1.7;
 }
 
-/* ============ TESTIMONIALS SECTION ============ */
+/* ============ SEÇÃO DE DEPOIMENTOS ============ */
 .testimonial-slider {
     max-width: 800px;
     margin: 0 auto;
@@ -1306,7 +1354,7 @@ ul {
 }
 
 /* ============ LIMPEZA DE ESPAÇOS GLOBAIS (ENTRE SEÇÕES) ============ */
-/* Força a remoção de vácuos entre o Protocolo (Process) e Carreiras */
+/* Força a remoção de espaços vazios entre a seção de Processo e a seção de Carreiras */
 .process-section, 
 section[id*="process"], 
 section[id*="funciona"] {
@@ -1318,10 +1366,10 @@ section[id*="funciona"] {
 section[id*="career"], 
 section[id*="trabalhe"] {
     padding-top: 0 !important;
-    margin-top: -160px !important; /* Puxa o formulário para bem perto dos textos dos ícones */
+    margin-top: -160px !important; /* Aproxima o formulário dos textos dos ícones */
 }
 
-/* Garante que as linhas e contêineres internos não criem espaços */
+/* Garante que contêineres e linhas internas não criem espaçamentos extras */
 .process-section .container, 
 .process-section .row,
 .careers-section .container {
@@ -1329,10 +1377,10 @@ section[id*="trabalhe"] {
     margin-bottom: 0 !important;
 }
 
-/* ============ PROCESS SECTION ============ */
+/* ============ SEÇÃO DE PROCESSO ============ */
 .process-step {
     text-align: center;
-    padding: 10px; /* Reduzido para aproximar o texto do ícone */
+    padding: 10px; /* Reduz o espaçamento para aproximar texto e ícone */
     position: relative;
 }
 
@@ -1375,10 +1423,10 @@ section[id*="trabalhe"] {
     color: var(--gray-600);
     font-size: 0.95rem;
     line-height: 1.7;
-    margin-bottom: 0; /* Remove espaço extra abaixo do parágrafo */
+    margin-bottom: 0; /* Remove espaço extra abaixo do texto */
 }
 
-/* ============ CAREERS SECTION ============ */
+/* ============ SEÇÃO DE CARREIRAS ============ */
 .career-benefits {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1412,7 +1460,7 @@ section[id*="trabalhe"] {
     text-align: center;
 }
 
-/* ============ CONTACT SECTION ============ */
+/* ============ SEÇÃO DE CONTATO ============ */
 .contact-info-card {
     background: var(--cream);
     padding: 30px 35px;
@@ -1479,7 +1527,7 @@ section[id*="trabalhe"] {
     text-align: center;
 }
 
-/* ============ FORMS ============ */
+/* ============ FORMULÁRIOS ============ */
 .form-label {
     font-weight: 500;
     color: var(--black);
@@ -1540,7 +1588,7 @@ section[id*="trabalhe"] {
     display: block;
 }
 
-/* ============ CTA SECTION ============ */
+/* ============ SEÇÃO DE CHAMADA PARA AÇÃO (CTA) ============ */
 .cta-section {
     background: var(--black);
     padding: 100px 0;
@@ -1606,7 +1654,7 @@ section[id*="trabalhe"] {
     border-color: var(--cream);
 }
 
-/* ============ FOOTER ============ */
+/* ============ RODAPÉ ============ */
 .footer {
     background: var(--black);
     padding: 120px 0 60px;
@@ -1791,7 +1839,8 @@ section[id*="trabalhe"] {
         gap: 20px;
     }
 }
-/* ============ WHATSAPP FLOAT ============ */
+
+/* ============ WHATSAPP FLUTUANTE ============ */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -1836,7 +1885,7 @@ section[id*="trabalhe"] {
     }
 }
 
-/* ============ BACK TO TOP ============ */
+/* ============ VOLTAR AO TOPO ============ */
 .back-to-top {
     position: fixed;
     bottom: 100px;
@@ -1869,7 +1918,7 @@ section[id*="trabalhe"] {
     transform: translateY(-5px);
 }
 
-/* ============ RESPONSIVE ============ */
+/* ============ RESPONSIVIDADE ============ */
 @media (max-width: 1199.98px) {
     .hero-title {
         font-size: 3.5rem;
@@ -1981,7 +2030,7 @@ section[id*="trabalhe"] {
     }
 }
 
-/* ============ ACCESSIBILITY ============ */
+/* ============ ACESSIBILIDADE ============ */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1992,7 +2041,7 @@ section[id*="trabalhe"] {
     }
 }
 
-/* Focus styles */
+/* Estilos de foco */
 a:focus,
 button:focus,
 input:focus,
@@ -2002,7 +2051,7 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* Skip to content */
+/* Pular para o conteúdo */
 .skip-link {
     position: absolute;
     top: -40px;
