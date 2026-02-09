@@ -268,10 +268,11 @@ ul {
     padding: 20px 0;
     background: transparent;
     transition: var(--transition-normal);
-    position: relative; /* NECESSÁRIO PARA O ::before */
+    position: relative;
+    z-index: 9999; /* FICA ACIMA DO HERO */
 }
 
-/* FUNDO E BLUR ISOLADOS */
+/* FUNDO DA NAVBAR ISOLADO */
 .navbar.scrolled::before {
     content: '';
     position: absolute;
@@ -286,8 +287,8 @@ ul {
     padding: 12px 0;
 }
 
-/* GARANTE QUE O CONTEÚDO FIQUE ACIMA DO FUNDO */
-.navbar > * {
+/* CONTEÚDO DA NAVBAR ACIMA DO FUNDO */
+.navbar > .container {
     position: relative;
     z-index: 1;
 }
@@ -364,6 +365,7 @@ ul {
     width: 30px;
 }
 
+/* BOTÃO ORÇAMENTO (PROTEGIDO) */
 .btn-orcamento {
     background: var(--gold);
     color: var(--black);
@@ -377,6 +379,8 @@ ul {
     border: none;
     transition: var(--transition-normal);
     letter-spacing: 0.5px;
+    opacity: 1;
+    filter: none;
 }
 
 .btn-orcamento:hover {
@@ -386,7 +390,7 @@ ul {
     box-shadow: var(--shadow-gold);
 }
 
-/* Botão do menu mobile */
+/* ============ BOTÃO MENU MOBILE ============ */
 .navbar-toggler {
     border: none;
     padding: 10px;
@@ -424,7 +428,7 @@ ul {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Menu Mobile */
+/* ============ MENU MOBILE ============ */
 @media (max-width: 991.98px) {
     .navbar-collapse {
         background: var(--black);
@@ -433,16 +437,16 @@ ul {
         border-radius: var(--radius-md);
         border: 1px solid rgba(201, 162, 39, 0.2);
     }
-    
+
     .navbar-nav {
         gap: 0;
     }
-    
+
     .navbar-nav .nav-link {
         padding: 15px 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-    
+
     .btn-orcamento {
         margin-top: 20px;
         justify-content: center;
