@@ -268,13 +268,28 @@ ul {
     padding: 20px 0;
     background: transparent;
     transition: var(--transition-normal);
+    position: relative; /* NECESSÁRIO PARA O ::before */
+}
+
+/* FUNDO E BLUR ISOLADOS */
+.navbar.scrolled::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    z-index: 0;
 }
 
 .navbar.scrolled {
     padding: 12px 0;
-    background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* GARANTE QUE O CONTEÚDO FIQUE ACIMA DO FUNDO */
+.navbar > * {
+    position: relative;
+    z-index: 1;
 }
 
 .navbar-brand {
